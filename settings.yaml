@@ -1,0 +1,50 @@
+BonusEngineService:
+  Db:
+    MsSqlConnectionString:
+      settings-key: BonusEngineService-MsSqlConnectionString
+    LogsConnString:
+      settings-key: BonusEngineService-LogsConnString
+      types:
+        - AzureTableStorage
+
+  RabbitMq:
+    RabbitMqConnectionString:
+      settings-key: BonusManagementRabbitMQ
+      types:
+        - RabbitMq
+
+  Redis:
+    ConnectionString:
+      settings-key: BonusEngineService-Redis-ConnectionString
+      types:
+        - Redis
+    InstanceName:
+      settings-key: BonusEngineService-Redis-InstanceName
+
+  Constants:
+    TokenSymbol:
+      settings-key: Constant-TokenSymbol
+
+    BaseCurrencyCode: 
+      settings-key: Constant-BaseCurrencyCode
+
+EligibilityEngineServiceClient:
+  ServiceUrl:
+    settings-key: EligibilityEngineServiceUrl
+
+CampaignServiceClient:
+  ServiceUrl:
+    settings-key: CampaignServiceUrl
+
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types:
+        - AzureTableStorage
+    QueueName:
+      settings-key: SlackQueueName
+
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl
