@@ -22,7 +22,7 @@ namespace MAVN.Service.BonusEngine.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Service.BonusEngine.MsSqlRepositories.Entities.ActiveCampaign", b =>
+            modelBuilder.Entity("MAVN.Service.BonusEngine.MsSqlRepositories.Entities.ActiveCampaign", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace MAVN.Service.BonusEngine.MsSqlRepositories.Migrations
                     b.ToTable("active_campaigns");
                 });
 
-            modelBuilder.Entity("Lykke.Service.BonusEngine.MsSqlRepositories.Entities.CampaignCompletionEntity", b =>
+            modelBuilder.Entity("MAVN.Service.BonusEngine.MsSqlRepositories.Entities.CampaignCompletionEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace MAVN.Service.BonusEngine.MsSqlRepositories.Migrations
                     b.ToTable("campaign_completion");
                 });
 
-            modelBuilder.Entity("Lykke.Service.BonusEngine.MsSqlRepositories.Entities.ConditionCompletionEntity", b =>
+            modelBuilder.Entity("MAVN.Service.BonusEngine.MsSqlRepositories.Entities.ConditionCompletionEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
