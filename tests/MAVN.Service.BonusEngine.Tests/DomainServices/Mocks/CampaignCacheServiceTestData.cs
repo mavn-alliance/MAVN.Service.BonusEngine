@@ -1,10 +1,10 @@
-using MAVN.Service.BonusEngine.Domain.Models;
+﻿using MAVN.Service.BonusEngine.Domain.Models;
 using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
 using Lykke.Service.Campaign.Client.Models.Condition;
 using System;
 using System.Collections.Generic;
-using CampaignModel = Lykke.Service.BonusEngine.Domain.Models.Campaign;
-using Condition = Lykke.Service.BonusEngine.Domain.Models.Condition;
+using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
+using Condition = MAVN.Service.BonusEngine.Domain.Models.Condition;
 
 namespace MAVN.Service.BonusEngine.Tests.DomainServices.Mocks
 {

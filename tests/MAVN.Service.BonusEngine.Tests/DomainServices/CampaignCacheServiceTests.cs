@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoFixture;
+using Lykke.Common.Api.Contract.Responses;
 using Lykke.Common.ApiLibrary.Exceptions;
 using Lykke.Logs;
 using MAVN.Service.BonusEngine.Domain.Repositories;
@@ -14,7 +15,7 @@ using Moq;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 using Xunit;
-using CampaignModel = Lykke.Service.BonusEngine.Domain.Models.Campaign;
+using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
 
 namespace MAVN.Service.BonusEngine.Tests.DomainServices
 {
@@ -88,7 +89,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             _campaignClientMock.Setup(c => c.Campaigns.GetAsync(It.IsAny<CampaignsPaginationRequestModel>()))
                 .ThrowsAsync(new ClientApiException(System.Net.HttpStatusCode.BadRequest,
-                    new Common.Api.Contract.Responses.ErrorResponse() { ErrorMessage = "test" }));
+                    new ErrorResponse { ErrorMessage = "test" }));
 
             var result = await _campaignCacheService.UpdateActiveCampaigns();
 

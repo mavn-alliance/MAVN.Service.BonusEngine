@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +15,7 @@ using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.Domain.Services;
 using Lykke.Service.Campaign.Client;
 using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
+using Lykke.Service.Campaign.Client.Models.Enums;
 
 namespace MAVN.Service.BonusEngine.DomainServices
 {
@@ -177,7 +178,7 @@ namespace MAVN.Service.BonusEngine.DomainServices
                     return (false, e.Message);
                 }
 
-                if (campaign.ErrorCode != Campaign.Client.Models.Enums.CampaignServiceErrorCodes.None)
+                if (campaign.ErrorCode != CampaignServiceErrorCodes.None)
                 {
                     _log.Error("ProcessEventForCampaignChange",
                         null,
@@ -324,7 +325,7 @@ namespace MAVN.Service.BonusEngine.DomainServices
             }
         }
 
-        private async Task ProcessCampaignForCustomerAsync(Lykke.Service.BonusEngine.Domain.Models.Campaign campaign,
+        private async Task ProcessCampaignForCustomerAsync(MAVN.Service.BonusEngine.Domain.Models.Campaign campaign,
             CampaignCompletion campaignCompletion, Guid operationId, IReadOnlyDictionary<string, string> data)
         {
             var customerId = campaignCompletion.CustomerId;
@@ -399,7 +400,7 @@ namespace MAVN.Service.BonusEngine.DomainServices
         }
 
         private static bool IsCampaignCompleted(IReadOnlyCollection<ConditionCompletion> conditionCompletions,
-            Lykke.Service.BonusEngine.Domain.Models.Campaign campaign)
+            MAVN.Service.BonusEngine.Domain.Models.Campaign campaign)
         {
             return conditionCompletions.Count == campaign.Conditions.Count &&
                    conditionCompletions.All(c => c.IsCompleted);

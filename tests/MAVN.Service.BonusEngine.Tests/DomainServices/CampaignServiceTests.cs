@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Lykke.Common.Api.Contract.Responses;
 using Lykke.Common.ApiLibrary.Exceptions;
 using Lykke.Logs;
 using Lykke.RabbitMqBroker.Publisher;
@@ -10,10 +11,11 @@ using MAVN.Service.BonusEngine.Domain.Models;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.Domain.Services;
 using MAVN.Service.BonusEngine.DomainServices;
+using Lykke.Service.Campaign.Client.Models.Enums;
 using Lykke.Service.Campaign.Client;
 using Moq;
 using Xunit;
-using CampaignModel = Lykke.Service.BonusEngine.Domain.Models.Campaign;
+using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
 
 namespace MAVN.Service.BonusEngine.Tests.DomainServices
 {
@@ -60,7 +62,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             _campaignClientMock.Setup(c => c.History.GetEarnRuleByIdAsync(It.IsAny<Guid>()))
                 .ThrowsAsync(new ClientApiException(System.Net.HttpStatusCode.BadRequest, 
-                    new Common.Api.Contract.Responses.ErrorResponse { ErrorMessage = "Test error" }));
+                    new ErrorResponse { ErrorMessage = "Test error" }));
 
             //Act
             var result = await _campaignService.ProcessEventForCampaignChangeAsync(messageCampaignId: Guid.NewGuid(),
@@ -78,9 +80,9 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         public async Task ProcessEventForCampaignChange_WhenCampaignStatusActiveAndErrorCodeReturnedFromClient_ReturnFalse()
         {
             _campaignClientMock.Setup(c => c.History.GetEarnRuleByIdAsync(It.IsAny<Guid>()))
-                .ReturnsAsync(new Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
+                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
                 {
-                    ErrorCode = Campaign.Client.Models.Enums.CampaignServiceErrorCodes.GuidCanNotBeParsed,
+                    ErrorCode = CampaignServiceErrorCodes.GuidCanNotBeParsed,
                     ErrorMessage = "Test error"
                 });
 
@@ -101,11 +103,11 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.History.GetEarnRuleByIdAsync(It.IsAny<Guid>()))
-                .ReturnsAsync((Guid earnRuleId) =>  new Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
+                .ReturnsAsync((Guid earnRuleId) =>  new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
                 {
                     Id = earnRuleId.ToString(),
                     Name = "Test campaign",
-                    ErrorCode = Campaign.Client.Models.Enums.CampaignServiceErrorCodes.None
+                    ErrorCode = CampaignServiceErrorCodes.None
                 });
 
             _activeCampaignRepositoryMock.Setup(a => a.InsertAsync(It.IsAny<Guid>()))
@@ -136,11 +138,11 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
-                    ErrorCode = Campaign.Client.Models.Enums.CampaignServiceErrorCodes.None
+                    ErrorCode = CampaignServiceErrorCodes.None
                 });
 
             _conditionCompletionServiceMock.Setup(c => c.GetConditionCompletionsAsync(It.IsAny<string>()))
@@ -178,11 +180,11 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
-                    ErrorCode = Campaign.Client.Models.Enums.CampaignServiceErrorCodes.None
+                    ErrorCode = CampaignServiceErrorCodes.None
                 });
 
             _conditionCompletionServiceMock.Setup(c => c.GetConditionCompletionsAsync(It.IsAny<string>()))
@@ -226,11 +228,11 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
-                    ErrorCode = Campaign.Client.Models.Enums.CampaignServiceErrorCodes.None
+                    ErrorCode = CampaignServiceErrorCodes.None
                 });
 
             _conditionCompletionServiceMock.Setup(c => c.GetConditionCompletionsAsync(It.IsAny<string>()))
@@ -285,11 +287,11 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
-                    ErrorCode = Campaign.Client.Models.Enums.CampaignServiceErrorCodes.None
+                    ErrorCode = CampaignServiceErrorCodes.None
                 });
 
             _conditionCompletionServiceMock.Setup(c => c.GetConditionCompletionsAsync(It.IsAny<string>()))

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
 using Lykke.Service.Campaign.Client.Models.Enums;
 using Newtonsoft.Json;
 using StackExchange.Redis;
-using CampaignModel = Lykke.Service.BonusEngine.Domain.Models.Campaign;
+using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
 
 namespace MAVN.Service.BonusEngine.DomainServices
 {
