@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,8 +13,8 @@ using MAVN.Service.BonusEngine.DomainServices;
 using Lykke.Service.Campaign.Client;
 using Moq;
 using StackExchange.Redis;
-using CampaignModel = Lykke.Service.BonusEngine.Domain.Models.Campaign;
-using Condition = Lykke.Service.BonusEngine.Domain.Models.Condition;
+using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
+using Condition = MAVN.Service.BonusEngine.Domain.Models.Condition;
 
 namespace MAVN.Service.BonusEngine.Tests.DomainServices
 {

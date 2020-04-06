@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Autofac;
 using System.Threading.Tasks;
-using CampaignModel = Lykke.Service.BonusEngine.Domain.Models.Campaign;
+using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
 
 namespace MAVN.Service.BonusEngine.Domain.Services
 {
