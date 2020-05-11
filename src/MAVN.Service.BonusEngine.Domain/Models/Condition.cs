@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using MAVN.Service.BonusEngine.Domain.Enums;
 using Newtonsoft.Json;
 

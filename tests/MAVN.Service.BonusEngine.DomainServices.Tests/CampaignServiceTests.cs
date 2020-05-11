@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using Lykke.Logs;
 using Lykke.RabbitMqBroker.Publisher;
 using MAVN.Service.BonusEngine.Contract.Events;
@@ -10,7 +10,7 @@ using MAVN.Service.BonusEngine.Domain.Enums;
 using MAVN.Service.BonusEngine.Domain.Models;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.Domain.Services;
-using Lykke.Service.Campaign.Client;
+using MAVN.Service.Campaign.Client;
 using Moq;
 using Xunit;
 

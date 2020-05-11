@@ -1,4 +1,4 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.Sdk;
 using MAVN.Service.BonusEngine.Domain.Services;
@@ -6,8 +6,8 @@ using MAVN.Service.BonusEngine.DomainServices;
 using MAVN.Service.BonusEngine.Managers;
 using MAVN.Service.BonusEngine.MsSqlRepositories;
 using MAVN.Service.BonusEngine.Settings;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.EligibilityEngine.Client;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.EligibilityEngine.Client;
 using Lykke.SettingsReader;
 using StackExchange.Redis;
 

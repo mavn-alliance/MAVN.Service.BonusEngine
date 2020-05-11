@@ -1,9 +1,9 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using Lykke.Common.Log;
 using MAVN.Service.BonusEngine.Domain.Enums;
 using MAVN.Service.BonusEngine.Domain.Services;
-using Lykke.Service.Campaign.Contract.Events;
+using MAVN.Service.Campaign.Contract.Events;
 
 namespace MAVN.Service.BonusEngine.DomainServices.Subscribers
 {

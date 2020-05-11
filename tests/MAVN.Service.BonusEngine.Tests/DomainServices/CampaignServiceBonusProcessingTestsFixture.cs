@@ -10,7 +10,7 @@ using MAVN.Service.BonusEngine.Domain.Models;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.Domain.Services;
 using MAVN.Service.BonusEngine.DomainServices;
-using Lykke.Service.Campaign.Client;
+using MAVN.Service.Campaign.Client;
 using Moq;
 using StackExchange.Redis;
 using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;

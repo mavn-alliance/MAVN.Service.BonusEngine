@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
-    <PackageReference Include="Falcon.Numerics" Version="0.1.1" />
     <PackageReference Include="Lykke.Common" Version="7.5.0" />
+    <PackageReference Include="MAVN.Numerics" Version="1.0.0" />
   </ItemGroup>
 </Project>

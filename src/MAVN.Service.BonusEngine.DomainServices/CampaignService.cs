@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Common.Log;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using Lykke.Common.ApiLibrary.Exceptions;
 using Lykke.Common.Log;
 using Lykke.RabbitMqBroker.Publisher;
@@ -13,9 +13,9 @@ using MAVN.Service.BonusEngine.Domain.Enums;
 using MAVN.Service.BonusEngine.Domain.Models;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.Domain.Services;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
-using Lykke.Service.Campaign.Client.Models.Enums;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.Campaign.Client.Models.Campaign.Responses;
+using MAVN.Service.Campaign.Client.Models.Enums;
 
 namespace MAVN.Service.BonusEngine.DomainServices
 {

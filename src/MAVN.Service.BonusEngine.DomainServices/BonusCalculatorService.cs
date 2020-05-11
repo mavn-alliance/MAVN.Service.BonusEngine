@@ -1,5 +1,5 @@
-using Common.Log;
-using Falcon.Numerics;
+﻿using Common.Log;
+using MAVN.Numerics;
 using Lykke.Common.Log;
 using MAVN.Service.BonusEngine.Domain.Enums;
 using MAVN.Service.BonusEngine.Domain.Models;
@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Lykke.Service.EligibilityEngine.Client;
-using Lykke.Service.EligibilityEngine.Client.Enums;
-using Lykke.Service.EligibilityEngine.Client.Models.ConversionRate.Requests;
+using MAVN.Service.EligibilityEngine.Client;
+using MAVN.Service.EligibilityEngine.Client.Enums;
+using MAVN.Service.EligibilityEngine.Client.Models.ConversionRate.Requests;
 using Newtonsoft.Json;
 
 namespace MAVN.Service.BonusEngine.DomainServices
