@@ -1,5 +1,5 @@
 using System;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using JetBrains.Annotations;
 using MAVN.Service.BonusEngine.Contract.Enums;
 

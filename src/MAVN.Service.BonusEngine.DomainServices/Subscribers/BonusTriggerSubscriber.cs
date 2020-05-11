@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Common;
 using Lykke.Common.Log;
 using MAVN.Service.BonusEngine.Domain.Services;
-using Lykke.Service.BonusTriggerAgent.Contract.Events;
+using MAVN.Service.BonusTriggerAgent.Contract.Events;
 
 namespace MAVN.Service.BonusEngine.DomainServices.Subscribers
 {

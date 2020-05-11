@@ -1,6 +1,6 @@
 ﻿using MAVN.Service.BonusEngine.Domain.Models;
-using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
-using Lykke.Service.Campaign.Client.Models.Condition;
+using MAVN.Service.Campaign.Client.Models.Campaign.Responses;
+using MAVN.Service.Campaign.Client.Models.Condition;
 using System;
 using System.Collections.Generic;
 using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;

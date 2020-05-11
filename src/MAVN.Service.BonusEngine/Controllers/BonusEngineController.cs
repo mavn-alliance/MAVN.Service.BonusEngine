@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using MAVN.Service.BonusEngine.Domain.Enums;
 using MAVN.Service.BonusEngine.Domain.Services;
-using Lykke.Service.Campaign.Contract.Events;
+using MAVN.Service.Campaign.Contract.Events;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MAVN.Service.BonusEngine.Controllers

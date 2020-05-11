@@ -1,7 +1,7 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using Lykke.Sdk.Settings;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.EligibilityEngine.Client;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.EligibilityEngine.Client;
 
 namespace MAVN.Service.BonusEngine.Settings
 {

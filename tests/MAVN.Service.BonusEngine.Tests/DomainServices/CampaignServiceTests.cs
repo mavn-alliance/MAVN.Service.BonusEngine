@@ -11,8 +11,8 @@ using MAVN.Service.BonusEngine.Domain.Models;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.Domain.Services;
 using MAVN.Service.BonusEngine.DomainServices;
-using Lykke.Service.Campaign.Client.Models.Enums;
-using Lykke.Service.Campaign.Client;
+using MAVN.Service.Campaign.Client.Models.Enums;
+using MAVN.Service.Campaign.Client;
 using Moq;
 using Xunit;
 using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
@@ -80,7 +80,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         public async Task ProcessEventForCampaignChange_WhenCampaignStatusActiveAndErrorCodeReturnedFromClient_ReturnFalse()
         {
             _campaignClientMock.Setup(c => c.History.GetEarnRuleByIdAsync(It.IsAny<Guid>()))
-                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
+                .ReturnsAsync(new MAVN.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
                 {
                     ErrorCode = CampaignServiceErrorCodes.GuidCanNotBeParsed,
                     ErrorMessage = "Test error"
@@ -103,7 +103,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.History.GetEarnRuleByIdAsync(It.IsAny<Guid>()))
-                .ReturnsAsync((Guid earnRuleId) =>  new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
+                .ReturnsAsync((Guid earnRuleId) =>  new MAVN.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel
                 {
                     Id = earnRuleId.ToString(),
                     Name = "Test campaign",
@@ -138,7 +138,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new MAVN.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
@@ -180,7 +180,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new MAVN.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
@@ -228,7 +228,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new MAVN.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",
@@ -287,7 +287,7 @@ namespace MAVN.Service.BonusEngine.Tests.DomainServices
         {
             //Arrange
             _campaignClientMock.Setup(c => c.Campaigns.GetByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new Lykke.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
+                .ReturnsAsync(new MAVN.Service.Campaign.Client.Models.Campaign.Responses.CampaignDetailResponseModel()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Test campaign",

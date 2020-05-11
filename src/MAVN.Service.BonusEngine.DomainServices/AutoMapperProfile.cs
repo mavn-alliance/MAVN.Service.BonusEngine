@@ -2,9 +2,9 @@
 using AutoMapper;
 using MAVN.Service.BonusEngine.Domain.Enums;
 using MAVN.Service.BonusEngine.Domain.Models;
-using Lykke.Service.Campaign.Client.Models.BonusType;
-using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
-using Lykke.Service.Campaign.Client.Models.Condition;
+using MAVN.Service.Campaign.Client.Models.BonusType;
+using MAVN.Service.Campaign.Client.Models.Campaign.Responses;
+using MAVN.Service.Campaign.Client.Models.Condition;
 using BonusOperationTypeContract = MAVN.Service.BonusEngine.Contract.Enums.BonusOperationType;
 using BonusOperationTypeModel = MAVN.Service.BonusEngine.Domain.Enums.BonusOperationType;
 using CampaignModel = MAVN.Service.BonusEngine.Domain.Models.Campaign;
@@ -44,8 +44,8 @@ namespace MAVN.Service.BonusEngine.DomainServices
             CreateMap<RewardRatioAttributeDetailsResponseModel, RewardRatioAttribute>();
             CreateMap<RatioAttributeDetailsModel, Domain.Models.RatioAttribute>();
 
-            CreateMap<Lykke.Service.Campaign.Contract.Enums.CampaignStatus, CampaignChangeEventStatus>();
-            CreateMap<Lykke.Service.Campaign.Contract.Enums.ActionType, ActionType>();
+            CreateMap<MAVN.Service.Campaign.Contract.Enums.CampaignStatus, CampaignChangeEventStatus>();
+            CreateMap<MAVN.Service.Campaign.Contract.Enums.ActionType, ActionType>();
         }
     }
 }
