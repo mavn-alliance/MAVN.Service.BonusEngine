@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.BonusEngine.Domain.Models;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.MsSqlRepositories.Entities;
@@ -13,11 +13,11 @@ namespace MAVN.Service.BonusEngine.MsSqlRepositories.Repositories
 {
     public class ConditionCompletionRepository : IConditionCompletionRepository
     {
-        private readonly MsSqlContextFactory<BonusEngineContext> _msSqlContextFactory;
+        private readonly PostgreSQLContextFactory<BonusEngineContext> _msSqlContextFactory;
         private readonly IMapper _mapper;
 
         public ConditionCompletionRepository(
-            MsSqlContextFactory<BonusEngineContext> msSqlContextFactory,
+            PostgreSQLContextFactory<BonusEngineContext> msSqlContextFactory,
             IMapper mapper)
         {
             _msSqlContextFactory = msSqlContextFactory;
