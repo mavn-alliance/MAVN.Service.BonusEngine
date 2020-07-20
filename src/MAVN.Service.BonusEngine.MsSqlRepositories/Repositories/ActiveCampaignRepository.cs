@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.BonusEngine.Domain.Repositories;
 using MAVN.Service.BonusEngine.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +11,9 @@ namespace MAVN.Service.BonusEngine.MsSqlRepositories.Repositories
 {
     public class ActiveCampaignRepository : IActiveCampaignRepository
     {
-        private readonly MsSqlContextFactory<BonusEngineContext> _msSqlContextFactory;
+        private readonly PostgreSQLContextFactory<BonusEngineContext> _msSqlContextFactory;
 
-        public ActiveCampaignRepository(MsSqlContextFactory<BonusEngineContext> msSqlContextFactory)
+        public ActiveCampaignRepository(PostgreSQLContextFactory<BonusEngineContext> msSqlContextFactory)
         {
             _msSqlContextFactory = msSqlContextFactory;
         }

@@ -1,11 +1,11 @@
 ﻿using System.Data.Common;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.BonusEngine.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAVN.Service.BonusEngine.MsSqlRepositories
 {
-    public class BonusEngineContext : MsSqlContext
+    public class BonusEngineContext : PostgreSQLContext
     {
         private const string Schema = "bonus_engine";
 
@@ -34,7 +34,7 @@ namespace MAVN.Service.BonusEngine.MsSqlRepositories
         {
         }
 
-        protected override void OnLykkeModelCreating(ModelBuilder modelBuilder)
+        protected override void OnMAVNModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CampaignCompletionEntity>()
                 .HasIndex(c => new
